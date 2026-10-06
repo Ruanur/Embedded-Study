@@ -30,7 +30,7 @@ int main(void)
 
     printf("Value = %d\n", value);
     printf("Value's Address = %p\n", (void*)&value);
-    printf("Pointer(*void) = %p\n", (void *)ptr);
+    printf("Pointer(*int) = %p\n", (void *)ptr);
     printf("Pointer = %d\n", *ptr);
 
     /*
@@ -45,10 +45,12 @@ int main(void)
     printf("Changed Value by a Pointer: %d\n", value);
 
     // 다른 자료형을 가리킨다면?
-    //  uint8_t *ptr_int8 = &value; 
-    // -> Error: initialization of 'uint8_t *' {aka 'unsigned char *'} 
+    //  uint8_t *ptr_int8 = &value;
+    // -> Error: initialization of 'uint8_t *' {aka 'unsigned char *'}
     //           from incompatible pointer type 'int *'
-    // 서로 다른 자료형은 가리킬 수 없음
+    // 서로 다른 자료형은 일반적으로 호환되지 않는다
+    // 다만, 형변환을 통한 접근이 가능
+    // Ex. uint8_t *ptr = (uint8_t *)&value;
 
     uint8_t value_int8 = 10;
     uint8_t *ptr_int8 = &value_int8;
@@ -62,12 +64,29 @@ int main(void)
     printf("Array Pointer = %u\n", *array_ptr);
     
     // 배열 주소 확인
-    // uint8_t는 1 Byte이므로 주소가 1 Byte씩 차이가 난다.
+    // 배열 요소는 연속된 메모리에 저장됨
+    // uint8_t의 크기가 1 Byte이므로 인접한 요소의 주소 차이가 1 Byte이다.
 
-    printf("Array Address.0 = %p\n", (void *)&data[0]); // 00000000005FFE60
-    printf("Array Address.1 = %p\n", (void *)&data[1]); // 00000000005FFE61
-    printf("Array Address.2 = %p\n", (void *)&data[2]); // 00000000005FFE62
+    printf("Array Address.0 = %p\n", (void *)&data[0]); // 실행 결과값 : 00000000005FFE60
+    printf("Array Address.1 = %p\n", (void *)&data[1]); // 실행 결과값 : 00000000005FFE61
+    printf("Array Address.2 = %p\n", (void *)&data[2]); // 실행 결과값 : 00000000005FFE62
 
+    printf("sizeof(data[0]) = %zu\n", sizeof(data[0]));
+    printf("sizeof(data[1]) = %zu\n", sizeof(data[1]));
+    printf("sizeof(data[2]) = %zu\n", sizeof(data[2]));
+
+    // 자료형 포인터와 크기의 상관관계
+    // int * -> int를 가리키는 포인터
+    // uint8_t * -> uint8_t를 가리키는 포인터
+    // sizeof(int*) -> int 포인터 자체의 크기
+    // sizeof(uint8_t*) -> uint8_t 포인터 자체의 크기
+    // sizeof(int) -> int 데이터의 크기
+    // sizeof(uint8_t) -> uint8_t 데이터의 크기
+
+    printf("sizeof(int *) = %zu\n", sizeof(int*));
+    printf("sizeof(uint8_t*) = %zu\n", sizeof(uint8_t*));
+    printf("sizeof(int) = %zu\n", sizeof(int));
+    printf("sizeof(uint8_t) = %zu\n", sizeof(uint8_t));
     return 0;
 
 }
