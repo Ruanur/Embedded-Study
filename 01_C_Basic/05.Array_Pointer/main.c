@@ -15,10 +15,10 @@ int main(void)
     printf("Data[0] = %u\n", data[0]);
     printf("*ptr = %u\n", *ptr);
 
-    printf("Data[0] = %u\n", data[1]);
+    printf("Data[1] = %u\n", data[1]);
     printf("*ptr = %u\n", *(ptr + 1));
 
-    printf("Data[0] = %u\n", data[2]);
+    printf("Data[2] = %u\n", data[2]);
     printf("*ptr = %u\n", *(ptr + 2));
 
     // uint8_t는 1 Byte, 주소가 1 Byte씩 이동
@@ -33,10 +33,12 @@ int main(void)
     uint8_t data_cp[3] = {10, 20, 30};
     uint8_t *ptr_cp = data_cp;
 
+    printf("Before: %u\n", data_cp[1]); 
+
     *(ptr_cp + 1) = 99;
 
     printf("%u\n", data_cp[0]);
-    printf("%u\n", data_cp[1]); // 99
+    printf("After: %u\n", data_cp[1]); // 20 -> 99
     printf("%u\n", data_cp[2]);
 
     return 0;
