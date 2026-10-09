@@ -26,17 +26,17 @@ void Sensor_Data()
         }
     }
 
-    printf("Count Result_25'C: %d\n", data_up_count);
+    printf("Count Above or Equal to 25 C: %d\n", data_up_count);
 
-    float Warning = (float)sum / count;
+    float avg_temperature = (float)sum / count;
 
-    if (Warning >= 28)
+    if (avg_temperature >= 28)
     {
         printf("WARNING");
     }
     else
     {
-        printf("Avg temperature: %.2f\n", Warning);
+        printf("Avg temperature: %.2f\n", avg_temperature);
     }
 }
 
