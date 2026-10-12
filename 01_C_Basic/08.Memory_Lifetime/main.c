@@ -2,6 +2,8 @@
 
 int global_count;
 
+// 함수 반환값 void -> int
+// main()에서 local_count에 직접 접근하지 않고 값 확인
 int TestFunction(void)
 {
     // 전역 변수(Global Variable) vs 지역 변수 (Local Variable)
