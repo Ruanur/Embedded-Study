@@ -18,9 +18,12 @@ void Dynamic_Integer_Single()
 
     // free(): 동적으로 할당한 메모리를 더 이상 사용하지 않을 때 반환
     free(ptr);
+    // 포인터가 해제된 메모리를 가리키는 상태로 남지 않게 정리한다.
+    // 이는 포인터 변수만 초기화하는 것이지 해제된 메모리를 다시 유효하게 만드는 것은 아니다.
     ptr = NULL;
 }
 
+// 메모리 배열 할당
 void Dynamic_Integer_Array()
 {
     int array_size = 5;
@@ -45,6 +48,7 @@ void Dynamic_Integer_Array()
     arr = NULL;
 }
 
+// 의도적 오류 확인
 void Use_After_Free()
 {
     int array_size = 5;
@@ -70,6 +74,7 @@ void Use_After_Free()
     return;
 }
 
+// 메모리 누수
 void Memory_Leak()
 {
     int *value_memory = malloc(sizeof(int));
