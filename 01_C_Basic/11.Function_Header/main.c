@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include "sensor.h"
 
+int temperatures[] = {25, 27, 26, 28, 24};
+int size = sizeof(temperatures) / sizeof(temperatures[0]);
+
 int main()
 {
     int Temperature = GetTemperature();
+    int AvgTemperature = GetAverageTemperature(temperatures, size);
     printf("Temperature: %d\n", Temperature);
+    printf("Average Temperature: %d\n", AvgTemperature);
     return 0;
 }
 
