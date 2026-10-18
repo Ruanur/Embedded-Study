@@ -7,3 +7,9 @@ void PrintSensorData(struct SensorData data)
     printf("Humidity: %d\n", data.humidity);
     printf("voltage: %d\n", data.voltage);
 }
+
+void SetSensorData(struct SensorData *data)
+{
+    data->temperature = 30;
+    data->humidity = 65;
+}

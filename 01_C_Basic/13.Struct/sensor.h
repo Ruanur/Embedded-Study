@@ -9,5 +9,7 @@ struct SensorData
 };
 
 void PrintSensorData(struct SensorData data);
+void SetSensorData(struct SensorData *data);
+
 
 #endif
