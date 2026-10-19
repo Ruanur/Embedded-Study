@@ -1,15 +1,22 @@
 #ifndef SENSOR_H
 #define SENSOR_H
 
-struct SensorData
+typedef enum
+{
+    SENSOR_NORMAL,
+    SENSOR_WARNING,
+    SENSOR_ERROR
+} SensorStatus;
+
+typedef struct 
 {
     int temperature; // 온도
     int humidity; // 습도
     int voltage; // 전압
-};
+    SensorStatus status;
+} SensorData;
 
-void PrintSensorData(struct SensorData data);
-void SetSensorData(struct SensorData *data);
-
+void PrintSensorData(SensorData data);
+void SetSensorData(SensorData *data);
 
 #endif

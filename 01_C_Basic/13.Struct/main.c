@@ -3,8 +3,9 @@
 
 int main(void)
 {
-    struct SensorData data = {27, 60, 3300};
-    struct SensorData *ptr = &data;
+    SensorData data = {27, 30, 30, SENSOR_NORMAL};
+    //data.status = SENSOR_NORMAL;
+    SensorData *ptr = &data;
 
     printf("Before\n");
     PrintSensorData(data);
