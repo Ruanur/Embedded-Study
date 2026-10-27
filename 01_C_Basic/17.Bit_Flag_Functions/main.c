@@ -66,6 +66,7 @@ void Print_Warning(uint8_t flags)
         printf("Humidity Warning!\n");
     }
 
+    // !IsFlagSet : 경고가 하나도 없을 때 정상 메세지 출력
     if (!IsFlagSet(flags, (FLAG_TEMP_WARNING | FLAG_HUMID_WARNING)))
     {
         // 00000011 : 3 - flag

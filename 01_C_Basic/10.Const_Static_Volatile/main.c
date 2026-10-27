@@ -32,10 +32,12 @@ void Volatile_Type(void)
     // 해당 객체에 대한 접근을 임의로 생략하거나 값 재사용으로 대체하지 않도록 한다. 
     volatile int sensor_ready = 0;
 
-    while (value == 0)
+    while (sensor_ready == 0)
     {
-        /* code */
+        /* 대기 */
     }
+
+
     
 }
 
@@ -46,6 +48,8 @@ int main(void)
     // const로 선언한 일반 걕체를 수정하려고 하면 컴파일 오류가 발생한다. 
     // MAX_TEMPERATURE = 100;
     
+    printf("MAX TEMPERATURE: %d\n", MAX_TEMPERATURE);
+
     for (int i = 0; i < 3; i++)
     {
         Normal_Count();
