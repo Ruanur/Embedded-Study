@@ -97,7 +97,7 @@ void UpdateDebouncedButton(
     }
 }
 
-int main(void)
+int main(void) 
 {
     volatile GPIO_Registers gpioA = {0};
     DebounceState buttonState = {0};
