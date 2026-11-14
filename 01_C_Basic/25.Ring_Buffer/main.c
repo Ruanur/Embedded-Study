@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <stddef.h>
 
 #define BUFFER_SIZE 5u
 

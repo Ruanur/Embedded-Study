@@ -328,20 +328,8 @@ void FrameAssembler_Input(
     {
         printf("[RX] Invalid Packet\n");
     }
-    
-
-    
-
-    
-
-
     // 성공 -> Device_HandlePacket()
     // 실패 -> "[RX] Invalid Packet" 출력
-
-    (void)assembler;
-    (void)byte;
-    (void)device;
-    (void)filter;
 }
 
 /* 수신 버퍼에 쌓인 바이트 처리 */

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <stddef.h>
 
 #define PACKET_SOF 0xAAu
 #define PACKET_SIZE 5u
